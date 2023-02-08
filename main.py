@@ -1,5 +1,28 @@
-print('Приветствую, я Артем')
-print('Я из города Киев, но сейчас нахожусь в Кишиневе')
-print('Увлекаюсь играми, военной тематикой, в особенности авиацией, а также космосом и т.д.')
-print('Обожаю музыку, хочу научится играть на гитаре и, возможно, на барабанах. Любимая группа: Rammstein, Sabaton')
-print('В будущем планирую заниматься разработкой игр, или же иметь дело с авиацией...')
+class Human:
+    def __init__(self, name="Human"):
+        self.name = name
+
+class Auto:
+    def __init__(self, brand):
+        self.brand = brand
+        self.passengers = []
+
+    def add_passengers(self, human):
+        print(human)
+        self.passengers.append(human)
+        print(self.passengers)
+
+    def print_passengers_names(self):
+        if self.passengers != []:
+            print(f"Names of {self.brand} passengers: ")
+            for passenger in self.passengers:
+                print(passenger.name)
+        else:
+            print(f"There are no passengers in {self.brand}")
+
+
+artem = Human("Artem")
+car = Auto("BMW")
+
+car.add_passengers(artem)
+car.print_passengers_names()
